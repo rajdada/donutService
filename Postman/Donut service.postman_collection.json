@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "83888470-351d-4fb7-b2c5-2c570afb2dd0",
+		"name": "Donut service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\" : 20,\r\n    \"customerId\" : 11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/donutService/addOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"donutService",
+						"addOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrdersAndWaitTime",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/donutService/getAllOrdersAndWaitTime",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"donutService",
+						"getAllOrdersAndWaitTime"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

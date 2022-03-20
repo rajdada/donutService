@@ -1,0 +1,40 @@
+Donut Service:
+
+1> Cretae Customer model
+	{
+		custId: 1 to 20000
+		isPremium: (custId <= 1000) ? true : false;
+	}
+
+2> Create Order model
+	{
+		orderId:
+	    Customer
+		quantity:
+		createTime:
+		waitTime:
+		position:
+	}
+
+3> Orders will be kept in single queue
+
+4> Client can place order or cancel order
+
+5> SQL :
+
+	insert orders
+
+	insert into Customer (custId, isPremium) values (?, ?)
+	insert into Order (orderId, custId, quantity, createTime) values (?, ?, ?, ?)
+
+	fetch orders
+
+	select o from Order o join o.customer c order by o.createTime, case when c.isPremium = 'false' then 0 else 1 end desc;
+
+6> APIs
+
+* addOrder
+* getQueuePositionAndWaitTime
+* getAllOrdersAndWaitTime
+* nextDelivery
+* deleteOrder
